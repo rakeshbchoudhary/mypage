@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Rakesh B Choudhary, Data Engineer and Software Developer specializing in ETL, Azure, and modern data solutions.">
-  <meta name="keywords" content="Data Engineer, Software Developer, ETL, Azure, Python, PySpark, Databricks, Azure Functions, Cosmos DB, Portfolio">
+  <meta name="description" content="Portfolio of Rakesh B Choudhary, Lead Data Engineer & Cloud Modernization Expert. Architecting petabyte-scale data platforms, Databricks, Apache Iceberg, and enterprise migrations.">
+  <meta name="keywords" content="Lead Data Engineer, Databricks, Apache Iceberg, PySpark, Azure, Snowflake, Delta Lake, Unity Catalog, Cloud Architecture, Morgan Stanley, Sigmoid Analytics">
   <meta name="author" content="Rakesh B Choudhary">
-  <meta name="theme-color" content="#0078D7">
-  <title>Rakesh B Choudhary - Portfolio</title>
-  <!-- Preload critical fonts -->
+  <meta name="theme-color" content="#00F5A0">
+  <title>Rakesh B Choudhary | Lead Data Engineer & Cloud Platform Modernization Expert</title>
+  
+  <!-- Preload fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/navbar.css">
@@ -20,128 +21,302 @@
   <link rel="stylesheet" href="styles/darkmode.css">
   <link rel="stylesheet" href="styles/certificates.css">
   <link rel="stylesheet" href="styles/skills-coding.css">
+  <link rel="stylesheet" href="styles/theme-kinetic.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-<body>
+<body class="dark-mode theme-kinetic">
+  <!-- Dynamic Kinetic Stream Background Canvas -->
+  <canvas id="kineticStreamCanvas" class="kinetic-bg-canvas" aria-hidden="true"></canvas>
+
   <!-- Sticky Navigation -->
   <nav class="navbar" aria-label="Main Navigation">
-    <ul>
-      <li><a href="#about" aria-label="About Me">About</a></li>
-      <li><a href="#skills-coding-tabs" aria-label="Skills and Coding Profiles">Skills</a></li>
+    <div class="nav-brand">
+      <span class="nav-stream-indicator"></span>
+      <span class="nav-name">Rakesh B Choudhary</span>
+      <span class="nav-badge">LEAD DATA ENG</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about" aria-label="About">About</a></li>
+      <li><a href="#telemetry" aria-label="Impact Telemetry">Impact</a></li>
+      <li><a href="#skills-coding-tabs" aria-label="Skills & Platforms">Skills</a></li>
+      <li><a href="#highlights" aria-label="Key Architecture Case Studies">Architecture</a></li>
       <li><a href="#experience" aria-label="Experience">Experience</a></li>
-      <li><a href="#projects" aria-label="Projects and Tools">Projects</a></li>
-      <li><a href="#certificates-gallery" aria-label="Certificates Gallery">Certificates</a></li>
+      <li><a href="#certifications" aria-label="Certifications">Certifications</a></li>
+      <li><a href="#projects" aria-label="Projects">Projects</a></li>
       <li><a href="#education" aria-label="Education">Education</a></li>
-      <li><a href="#more-about" aria-label="More About Me">More</a></li>
       <li><a href="#chillout" aria-label="Chill Out">Chill Out</a></li>
     </ul>
-    <button id="dark-mode-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
-      <i class="fas fa-moon"></i>
-    </button>
+    <div class="nav-actions">
+      <button id="dark-mode-toggle" aria-label="Toggle theme mode" title="Toggle theme mode">
+        <i class="fas fa-sun"></i>
+      </button>
+    </div>
   </nav>
 
   <main id="main-content">
     <!-- Hero Section -->
     <section class="hero scroll-reveal" id="hero" aria-label="Hero">
-      <div class="hero-photo">
-        <img src="images/profilepic2.webp" alt="Professional headshot of Rakesh B Choudhary, Data Engineer and Software Developer" loading="lazy" width="150" height="150">
+      <div class="hero-container">
+        <div class="hero-photo-wrapper">
+          <div class="hero-photo-ring"></div>
+          <div class="hero-photo">
+            <img src="images/profilepic2.webp" alt="Rakesh B Choudhary, Lead Data Engineer" loading="lazy" width="160" height="160">
+          </div>
+          <div class="hero-status-pill">
+            <span class="pulse-dot"></span> 4+ Yrs Distributed Systems
+          </div>
+        </div>
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            <i class="fas fa-bolt"></i> HIGH-THROUGHPUT CLOUD PLATFORMS & LAKEHOUSES
+          </div>
+          <h1>Rakesh B Choudhary</h1>
+          <p class="tagline">Lead Data Engineer | Cloud Platform & Big Data Modernization Expert</p>
+          <p class="hero-location"><i class="fas fa-map-marker-alt"></i> Bengaluru, India &bull; Fortune 500 Modernization (Morgan Stanley, Reckitt, Kenvue)</p>
+          
+          <div class="hero-cta-group">
+            <a href="https://linkedin.com/in/rakesh-choudhary" target="_blank" rel="noopener noreferrer" class="btn btn-primary" aria-label="LinkedIn Profile">
+              <i class="fab fa-linkedin"></i> Connect on LinkedIn
+            </a>
+            <a href="mailto:rakesh.bk.choudhary@gmail.com" class="btn btn-secondary" aria-label="Send Email">
+              <i class="fas fa-envelope"></i> rakesh.bk.choudhary@gmail.com
+            </a>
+            <a href="#telemetry" class="btn btn-tertiary">
+              <i class="fas fa-chart-line"></i> View $2.1M+ Impact
+            </a>
+          </div>
+
+          <div class="hero-social">
+            <a href="https://github.com/rakesh-b21" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://leetcode.com/RakeshBk/" target="_blank" rel="noopener noreferrer" title="LeetCode" aria-label="LeetCode"><i class="fas fa-code"></i></a>
+            <a href="https://www.hackerrank.com/crakeshb0" target="_blank" rel="noopener noreferrer" title="HackerRank" aria-label="HackerRank"><i class="fab fa-hackerrank"></i></a>
+            <a href="tel:+917019865711" title="Call Phone" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
+          </div>
+        </div>
       </div>
-      <div class="hero-content">
-        <h1>Rakesh B Choudhary</h1>
-        <p class="tagline" role="doc-subtitle">Data Engineer | Software Developer</p>
-        <div class="hero-social">
-          <a href="#skills-coding-tabs" title="View my technical skills and coding profiles" aria-label="Navigate to skills section"><i class="fas fa-code" aria-hidden="true"></i><span class="sr-only">Skills</span></a>
-          <a href="mailto:rakesh.bk.choudhary@gmail.com" title="Send me an email" aria-label="Contact via email"><i class="fas fa-envelope" aria-hidden="true"></i><span class="sr-only">Email</span></a>
-          <a href="https://linkedin.com/in/rakesh-b-choudhary-293722201" target="_blank" rel="noopener noreferrer" title="Connect with me on LinkedIn" aria-label="Visit my LinkedIn profile"><i class="fab fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a>
+    </section>
+
+    <!-- Impact Telemetry Ribbon -->
+    <section class="section-card telemetry-section scroll-reveal" id="telemetry" aria-label="Impact Telemetry">
+      <div class="telemetry-header">
+        <span class="telemetry-live-dot"></span>
+        <h2>High-Throughput Engineering Telemetry</h2>
+        <span class="telemetry-tag">MEASURED BUSINESS & PLATFORM ROI</span>
+      </div>
+      <div class="telemetry-grid">
+        <div class="telemetry-card highlight-gold">
+          <div class="telemetry-icon"><i class="fas fa-coins"></i></div>
+          <div class="telemetry-metric" data-target="2.1">$2.1M+</div>
+          <div class="telemetry-label">Annualized Cloud Cost Saved</div>
+          <div class="telemetry-desc">Saved $179k/mo at Kenvue via Databricks dynamic retailer job clusters, Apache Iceberg, and Snowflake copy deprecation.</div>
+        </div>
+        <div class="telemetry-card">
+          <div class="telemetry-icon"><i class="fas fa-database"></i></div>
+          <div class="telemetry-metric">Petabyte+</div>
+          <div class="telemetry-label">Platform Scale Operated</div>
+          <div class="telemetry-desc">Separated & segregated petabytes of enterprise data across 10 Databricks workspaces and ADF pipelines (Reckitt to Vestacy).</div>
+        </div>
+        <div class="telemetry-card">
+          <div class="telemetry-icon"><i class="fas fa-shield-alt"></i></div>
+          <div class="telemetry-metric" data-target="1000">1,000+</div>
+          <div class="telemetry-label">Datasets & 220+ Dashboards</div>
+          <div class="telemetry-desc">Architected Silver-layer filtering via Delta Sharing and Unity Catalog with Row-Level Security and 0 data variance.</div>
+        </div>
+        <div class="telemetry-card">
+          <div class="telemetry-icon"><i class="fas fa-rocket"></i></div>
+          <div class="telemetry-metric" data-target="100">100+</div>
+          <div class="telemetry-label">Zero-Downtime Migrations</div>
+          <div class="telemetry-desc">Re-engineered 100+ DB2-to-Postgres & Informatica-to-PySpark pipelines at Morgan Stanley with 100% data accuracy & 0 SLA breach.</div>
         </div>
       </div>
     </section>
 
     <!-- About Me -->
     <section class="about section-card scroll-reveal" id="about" aria-label="About Me">
-      <h2>About Me</h2>
-      <p>
-        Data Engineer with 3+ years of hands-on experience building reliable data pipelines and modernizing legacy workflows. Strong in Python, SQL, PySpark, and Azure (Functions, Databricks, Cosmos DB). I focus on performance, automation, and audit-ready delivery across finance and risk domains. Currently an Associate Consultant at Capgemini, recognized for accelerating migrations and improving operational efficiency.
-      </p>
+      <h2>Executive Profile</h2>
+      <div class="about-lead">
+        <p>
+          Senior Data Engineer with <strong>4+ years of experience</strong> architecting, modernizing, and optimizing high-throughput distributed data platforms across <strong>Databricks, PySpark, Azure, Snowflake, and On-Prem Linux/Autosys environments</strong>. 
+        </p>
+        <p>
+          Proven track record leading end-to-end data migrations, multi-terabyte company divestiture separations, and petabyte-scale Customer 360 platforms for global Fortune 500 clients (<strong>Morgan Stanley, Reckitt, Kenvue</strong>). Expert in framework development, automated pipeline execution, cost optimization, and complex risk & financial data modeling under strict SLA deadlines.
+        </p>
+      </div>
     </section>
 
-    <!-- Skills & Coding Profiles -->
+    <!-- Key Architecture Case Studies -->
+    <section class="section-card architecture-highlights scroll-reveal" id="highlights" aria-label="Key Architecture Case Studies">
+      <h2>Architecture & Engineering Highlights</h2>
+      <div class="case-study-grid">
+        <!-- Case 1 -->
+        <div class="case-study-card">
+          <div class="case-badge"><i class="fas fa-bolt"></i> COST OPTIMIZATION</div>
+          <h3>Customer 360 Platform Optimization (Kenvue)</h3>
+          <p class="case-client">Client: Kenvue | Scale: Petabyte-Scale 24/7 Platform</p>
+          <ul class="case-bullets">
+            <li>Transitioned heavy interactive clusters to dynamic retailer-specific job cluster frameworks.</li>
+            <li>Migrated legacy schemas to uniform <strong>Apache Iceberg</strong> table formats.</li>
+            <li>Eliminated redundant Snowflake copy pipelines, unlocking <strong>$179,000/month ($2.1M+ annualized)</strong> in compute and storage savings within 60 days.</li>
+          </ul>
+          <div class="case-tags">
+            <span>Databricks</span>
+            <span>Apache Iceberg</span>
+            <span>Snowflake</span>
+            <span>Cluster Optimization</span>
+          </div>
+        </div>
+
+        <!-- Case 2 -->
+        <div class="case-study-card">
+          <div class="case-badge"><i class="fas fa-network-wired"></i> ENTERPRISE DIVESTITURE</div>
+          <h3>Multi-Terabyte Platform Divestiture (Reckitt to Vestacy)</h3>
+          <p class="case-client">Client: Reckitt & Vestacy | Promoted to Tech Lead</p>
+          <ul class="case-bullets">
+            <li>Promoted to Technical Lead after 4 months on a 9-month company split program.</li>
+            <li>Replicated & segregated petabytes of data across <strong>10 Databricks workspaces</strong> and Azure Data Factory (ADF) pipelines spanning Finance, Sales, Marketing, and RGM domains.</li>
+            <li>Architected Silver-layer filtering via <strong>Delta Sharing</strong> and <strong>Unity Catalog</strong>, bypassing raw layer re-ingestion for 220+ production dashboards with strict Row-Level Security (RLS).</li>
+          </ul>
+          <div class="case-tags">
+            <span>Delta Sharing</span>
+            <span>Unity Catalog</span>
+            <span>Azure ADF</span>
+            <span>Row-Level Security</span>
+          </div>
+        </div>
+
+        <!-- Case 3 -->
+        <div class="case-study-card">
+          <div class="case-badge"><i class="fas fa-sync-alt"></i> ZERO-DOWNTIME MIGRATION</div>
+          <h3>DB2 to Postgres & PySpark Migration (Morgan Stanley)</h3>
+          <p class="case-client">Client: Morgan Stanley | 7-Month High-Risk Delivery</p>
+          <ul class="case-bullets">
+            <li>Primary developer re-engineering 100+ legacy Informatica workflows into high-performance Python-PySpark pipelines.</li>
+            <li>Cut over multi-terabyte financial database assets to Postgres with zero SLA misses from Day 1.</li>
+            <li>Developed metadata-driven JSON framework replacing manual ETL, cutting deployment errors by 90%.</li>
+          </ul>
+          <div class="case-tags">
+            <span>PySpark</span>
+            <span>PostgreSQL</span>
+            <span>DB2</span>
+            <span>Informatica Migration</span>
+          </div>
+        </div>
+
+        <!-- Case 4 -->
+        <div class="case-study-card">
+          <div class="case-badge"><i class="fas fa-brain"></i> AI & COMPLIANCE</div>
+          <h3>AI Data Lineage & PPWR Compliance Engine</h3>
+          <p class="case-client">Clients: Enterprise & Vestacy | Fast-Tracked Delivery</p>
+          <ul class="case-bullets">
+            <li>Engineered automated AI/Python scripts mapping end-to-end data lineage across multi-domain legacy apps.</li>
+            <li>Independently delivered the Packaging Waste Tracking (PPWR) pipeline in 3 weeks from scratch, delivering audited Power BI dashboards that secured Phase 2 expansion.</li>
+          </ul>
+          <div class="case-tags">
+            <span>AI Lineage</span>
+            <span>Python</span>
+            <span>Power BI</span>
+            <span>Regulatory Reporting</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Expertise (Skills Matrix) -->
     <section class="section-card skills-coding-section scroll-reveal" id="skills-coding-tabs" aria-label="Skills and Coding Profiles">
       <div class="tab-cards-container">
         <div class="tab-card active" data-tab="skills" tabindex="0" aria-label="Show Skills">
-          <i class="fas fa-tools"></i>
-          <span>Skills</span>
+          <i class="fas fa-server"></i>
+          <span>Technical Expertise</span>
         </div>
         <div class="tab-card" data-tab="profiles" tabindex="0" aria-label="Show Coding Profiles">
-          <i class="fas fa-laptop-code"></i>
+          <i class="fas fa-terminal"></i>
           <span>Coding Profiles</span>
         </div>
       </div>
+
       <div class="tab-content">
         <div id="skills" class="tab-panel active">
           <div class="skills-groups">
             <div class="skills-group">
-              <h3>Azure & Cloud</h3>
+              <h3><i class="fas fa-code"></i> Languages & Engine</h3>
               <ul class="skills-list">
-                <li class="skill-chip"><i class="fab fa-microsoft" aria-hidden="true"></i> Azure</li>
-                <li class="skill-chip"><i class="fas fa-bolt" aria-hidden="true"></i> Azure Functions</li>
-                <li class="skill-chip"><i class="fas fa-database" aria-hidden="true"></i> Azure Cosmos DB</li>
-                <li class="skill-chip"><i class="fas fa-chart-line" aria-hidden="true"></i> Databricks</li>
+                <li class="skill-chip"><i class="fab fa-python"></i> Python</li>
+                <li class="skill-chip"><i class="fas fa-fire"></i> PySpark</li>
+                <li class="skill-chip"><i class="fas fa-database"></i> SQL (Expert)</li>
+                <li class="skill-chip"><i class="fas fa-terminal"></i> Shell Scripting</li>
+                <li class="skill-chip"><i class="fas fa-cubes"></i> Scala</li>
               </ul>
             </div>
+            
             <div class="skills-group">
-              <h3>Core</h3>
+              <h3><i class="fas fa-layer-group"></i> Data Platforms</h3>
               <ul class="skills-list">
-                <li class="skill-chip"><i class="fab fa-python" aria-hidden="true"></i> Python</li>
-                <li class="skill-chip"><i class="fas fa-fire" aria-hidden="true"></i> PySpark</li>
-                <li class="skill-chip"><i class="fas fa-database" aria-hidden="true"></i> SQL</li>
-                <li class="skill-chip"><i class="fas fa-cogs" aria-hidden="true"></i> Informatica</li>
+                <li class="skill-chip highlight-chip"><i class="fas fa-chart-line"></i> Databricks</li>
+                <li class="skill-chip highlight-chip"><i class="fas fa-snowflake"></i> Snowflake</li>
+                <li class="skill-chip highlight-chip"><i class="fas fa-cube"></i> Apache Iceberg</li>
+                <li class="skill-chip highlight-chip"><i class="fas fa-database"></i> Delta Lake</li>
+                <li class="skill-chip"><i class="fas fa-cogs"></i> Informatica</li>
+                <li class="skill-chip"><i class="fas fa-database"></i> PostgreSQL</li>
+                <li class="skill-chip"><i class="fas fa-server"></i> IBM DB2</li>
+                <li class="skill-chip"><i class="fas fa-project-diagram"></i> TDV</li>
               </ul>
             </div>
+
             <div class="skills-group">
-              <h3>DevOps & Automation Tools</h3>
+              <h3><i class="fas fa-cloud"></i> Cloud & Orchestration</h3>
               <ul class="skills-list">
-                <li class="skill-chip"><i class="fas fa-stream" aria-hidden="true"></i> Kafka</li>
-                <li class="skill-chip"><i class="fab fa-docker" aria-hidden="true"></i> Docker</li>
-                <li class="skill-chip"><i class="fas fa-tools" aria-hidden="true"></i> Jenkins (CI/CD)</li>
-                <li class="skill-chip"><i class="fas fa-clock" aria-hidden="true"></i> Autosys</li>
+                <li class="skill-chip"><i class="fab fa-microsoft"></i> Azure (ADF & ADLS Gen2)</li>
+                <li class="skill-chip"><i class="fas fa-share-alt"></i> Delta Sharing</li>
+                <li class="skill-chip"><i class="fas fa-book"></i> Unity Catalog</li>
+                <li class="skill-chip"><i class="fas fa-clock"></i> Autosys</li>
+                <li class="skill-chip"><i class="fab fa-git-alt"></i> Azure DevOps / CI/CD</li>
+                <li class="skill-chip"><i class="fab fa-docker"></i> Docker</li>
+                <li class="skill-chip"><i class="fas fa-stream"></i> Apache Kafka</li>
               </ul>
             </div>
+
             <div class="skills-group">
-              <h3>Other</h3>
+              <h3><i class="fas fa-drafting-compass"></i> Data Architecture</h3>
               <ul class="skills-list">
-                <li class="skill-chip"><i class="fab fa-linux" aria-hidden="true"></i> Linux</li>
-                <li class="skill-chip"><i class="fab fa-git-alt" aria-hidden="true"></i> Git/Bitbucket</li>
-                <li class="skill-chip"><i class="fab fa-java" aria-hidden="true"></i> Java</li>
-                <li class="skill-chip"><i class="fas fa-chart-bar" aria-hidden="true"></i> Tableau</li>
+                <li class="skill-chip">ETL/ELT Frameworks</li>
+                <li class="skill-chip">SCD Type 2 Modeling</li>
+                <li class="skill-chip">Star & Snowflake Schema</li>
+                <li class="skill-chip">Data Governance & RLS</li>
+                <li class="skill-chip">AI-Powered Lineage</li>
+                <li class="skill-chip">REST & OIDC API Integration</li>
               </ul>
             </div>
           </div>
         </div>
+
         <div id="profiles" class="tab-panel">
           <div class="profiles-grid unique-profiles-grid minimal-profiles">
             <div class="profile-card">
-              <a href="https://leetcode.com/RakeshBk/" target="_blank" title="LeetCode" aria-label="LeetCode">
+              <a href="https://leetcode.com/RakeshBk/" target="_blank" rel="noopener noreferrer" title="LeetCode" aria-label="LeetCode">
                 <img src="images/leetcode.svg" alt="LeetCode" class="profile-icon" loading="lazy">
                 <p>LeetCode</p>
+                <span class="profile-tag">Algorithm & Problem Solving</span>
               </a>
             </div>
             <div class="profile-card">
-              <a href="https://www.hackerrank.com/crakeshb0" target="_blank" title="HackerRank" aria-label="HackerRank">
+              <a href="https://www.hackerrank.com/crakeshb0" target="_blank" rel="noopener noreferrer" title="HackerRank" aria-label="HackerRank">
                 <img src="images/hackerrank.svg" alt="HackerRank" class="profile-icon" loading="lazy">
                 <p>HackerRank</p>
+                <span class="profile-tag">SQL & Python Certified</span>
               </a>
             </div>
             <div class="profile-card">
-              <a href="https://www.hackerearth.com/@crakeshb0" target="_blank" title="HackerEarth" aria-label="HackerEarth">
+              <a href="https://www.hackerearth.com/@crakeshb0" target="_blank" rel="noopener noreferrer" title="HackerEarth" aria-label="HackerEarth">
                 <img src="images/hackerearth.svg" alt="HackerEarth" class="profile-icon" loading="lazy">
                 <p>HackerEarth</p>
+                <span class="profile-tag">Competitive Coding</span>
               </a>
             </div>
             <div class="profile-card">
-              <a href="https://github.com/rakesh-b21" target="_blank" title="GitHub" aria-label="GitHub">
+              <a href="https://github.com/rakesh-b21" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
                 <img src="images/github.svg" alt="GitHub" class="profile-icon" loading="lazy">
                 <p>GitHub</p>
+                <span class="profile-tag">Open Source & Pipelines</span>
               </a>
             </div>
           </div>
@@ -150,318 +325,186 @@
     </section>
 
     <!-- Experience Timeline -->
-    <section class="experience section-card scroll-reveal" id="experience" aria-label="Experience">
-      <h2>Experience</h2>
+    <section class="experience section-card scroll-reveal" id="experience" aria-label="Professional Experience">
+      <h2>Professional Experience</h2>
       <div class="timeline">
+        <!-- Sigmoid Analytics -->
         <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <h3>Data Engineer (Associate Consultant)</h3>
-                <div class="company-info">
-                  <span class="company">Capgemini | Project for Morgan Stanley</span>
-                  <span class="exp-date">Feb 2024 - Present | Bengaluru</span>
-                </div>
-                <p class="role-summary">Promoted for outstanding contributions in ETL development, application migration, and delivery on high-impact finance and operational risk initiatives.</p>
-                <ul>
-                  <li><strong>Automated Data Processing:</strong> Developed automated Python scripts for file ingestion, mapping over 50+ financial and risk-related data files weekly. Reduced manual effort by 100% and enabled real-time reporting for key stakeholders.</li>
-                  <li><strong>Performance Optimization:</strong> Optimized core SQL and ETL processes, delivering 70% better performance through advanced join strategies, batch processing, dynamic partitioning, and index management.</li>
-                  <li><strong>Migration Leadership:</strong> Played a major role in data warehouse migration project for finance/risk domains, completing in 6 months (vs. 12 estimated), accelerating project ROI and audit-readiness.</li>
-                  <li><strong>Monitoring Solutions:</strong> Designed a DB monitoring tool (Flask, Docker), enabling rapid detection of anomalies and long-running queries with a 40% reduction in incident resolution times.</li>
-                </ul>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="exp-header-row">
+              <h3>Software Development Engineer II (Lead Data Engineer)</h3>
+              <span class="exp-badge current-role">Oct 2025 – Present</span>
             </div>
+            <div class="company-info">
+              <span class="company"><i class="fas fa-building"></i> Sigmoid Analytics</span>
+              <span class="exp-date"><i class="fas fa-map-marker-alt"></i> Bengaluru &bull; Client Engagements: Reckitt, Vestacy, Kenvue</span>
+            </div>
+            <p class="role-summary">
+              Lead Architect on enterprise big data modernization, cloud migration, and petabyte-scale lakehouse platforms.
+            </p>
+            <ul class="exp-bullets">
+              <li><strong>Customer 360 Compute & Cost Optimization (Kenvue):</strong> Onboarded to core engineering team modernizing petabyte-scale 24/7 Customer 360 platform. Transitioned interactive clusters to dynamic retailer-specific job cluster frameworks, updated tables to uniform Apache Iceberg format, and removed redundant Snowflake copy pipelines—saving <strong>$179,000/month ($2.1M+ annualized)</strong> in cloud compute and storage costs within 2 months.</li>
+              <li><strong>Enterprise Data Platform Divestiture (Reckitt to Vestacy):</strong> Promoted to technical lead after 4 months on a 9-month company split project. Replicated and segregated petabytes of data across 10 Databricks workspaces and Azure Data Factory (ADF) pipelines across Finance, Sales, Marketing, and RGM domains.</li>
+              <li><strong>Silver-Layer Migration & Governance:</strong> Architected filtering mechanisms directly on Silver layer tables using Delta Sharing and Unity Catalog, bypassing raw layer re-ingestion. Maintained delivery for <strong>220+ production dashboards</strong> with strict row-level security (RLS) validation and zero data variance.</li>
+              <li><strong>AI-Powered Data Lineage Engine:</strong> Built automated AI/Python scripts to map end-to-end data lineage across multi-domain legacy applications, accelerating pipeline creation, dependency mapping, documentation, and client handover sign-offs.</li>
+              <li><strong>Regulatory Compliance Platform (PPWR Reporting):</strong> Independently led a fast-tracked 3-week project from scratch for Vestacy. Brainstormed with executive stakeholders to author Functional Requirement Specifications (FRS) and engineer a packaging waste tracking pipeline, delivering audited Power BI dashboards tracking PCR ratios, virgin content, and material weights that secured Phase 2 expansion.</li>
+            </ul>
+          </div>
         </div>
+
+        <!-- Capgemini / Morgan Stanley -->
         <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <h3>Data Engineer (Senior Software Engineer)</h3>
-                <div class="company-info">
-                  <span class="company">Capgemini | Project for Morgan Stanley</span>
-                  <span class="exp-date">Oct 2022 - Jan 2024 | Bengaluru</span>
-                </div>
-                <ul>
-                  <li><strong>ETL Development:</strong> Built and enhanced Informatica mappings and workflows for ingesting data from CSV, XML, PostgreSQL, MySQL, and DB2 - especially for regulated risk data.</li>
-                  <li><strong>Data Transformations:</strong> Leveraged advanced data transformations including cleaning, aggregation, calculated fields, parent-child relationships, and reshaping to support financial risk metrics.</li>
-                  <li><strong>Deployment Automation:</strong> Automated end-to-end DWH deployment, cutting human errors and saving 90% of developer effort, directly impacting operational risk reporting cycles.</li>
-                  <li><strong>Pipeline Development:</strong> Developed modular ETL pipelines using Pandas, NumPy, and OIDC secured APIs for trusted data acquisition with rigorous error handling and transparent logging.</li>
-                  <li><strong>Security & Access Control:</strong> Built access control automation for audit, enabling secure grants management via database control tables.</li>
-                </ul>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="exp-header-row">
+              <h3>Senior Software Engineer / Data Engineer</h3>
+              <span class="exp-badge">Oct 2022 – Sep 2025</span>
             </div>
+            <div class="company-info">
+              <span class="company"><i class="fas fa-building"></i> Capgemini | Client: Morgan Stanley</span>
+              <span class="exp-date"><i class="fas fa-map-marker-alt"></i> Bengaluru &bull; Operational, Market, External Risk & Regulatory Reporting</span>
+            </div>
+            <ul class="exp-bullets">
+              <li><strong>Database & Pipeline Migration (DB2 to Postgres):</strong> Served as primary developer on a critical 7-month migration involving 100+ pipelines and multi-terabyte database assets. Re-engineered legacy Informatica workflows into high-performance Python-PySpark pipelines, migrated tables and view scripts to Postgres with secure connection protocols, achieving zero SLA breach and seamless operational cutover from Day 1.</li>
+              <li><strong>OpenPages Issues & Actions Architecture Redesign:</strong> Expanded legacy daily snapshot architecture into an incremental loading model capable of processing massive historical closed issues and actions datasets. Built SCD Type 2 views, incorporated new dimensions (Findings), and integrated automated character-cleansing transformations.</li>
+              <li><strong>XML Risk Data Flattening & Factpack Engineering:</strong> Owned end-to-end data pipeline development for "Factpack", ingesting massive XML feeds capturing firm-wide risk categories (Internal, External, RCSA, OpenPages). Flattened XML hierarchies into denormalized silver/gold analytical tables.</li>
+              <li><strong>Internal Risk & Multi-Currency Impact Allocation:</strong> Built hourly automated pipelines processing high-value sensitive internal incident impact amounts in USD and EUR. Programmed complex FX rate override logic and entity-level impact allocation models powering critical regulatory submissions including SMA and EBA reporting.</li>
+              <li><strong>Metadata-Driven JSON Framework Development:</strong> Developed a unified, reusable Python/PySpark pipeline execution framework to replace Informatica. Designed modular JSON configuration files capable of handling raw data ingestion, transformation, data quality checks, and target loads via a single centralized repository.</li>
+              <li><strong>Self-Service Data Democratization (TDV & Internal No-Code Platform):</strong> Exposed curated views in TIBCO Data Virtualization (TDV) and onboarded datasets into Morgan Stanley's internal PySpark distributed platform, enabling non-technical risk analysts to perform drag-and-drop joins and calculations.</li>
+              <li><strong>Validation Studio & Platform Maintenance:</strong> Handled end-to-end risk review workflows in Validation Studio, upgraded market risk dimension API authentication scripts to MFA token-based whitelisted PROD IDs, and managed Autosys orchestrations across Red Hat Linux DEV/QA/UAT/PROD environments.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Promotions & Achievements -->
-    <section class="section-card promotions-achievements scroll-reveal" id="promotions-achievements" aria-label="Promotions and Achievements">
-      <h2>Promotions & Achievements</h2>
-      <ul class="achievements-list">
-        <li><strong>Role Growth:</strong> Advanced to Associate Consultant (2024) for impact across automation and migration initiatives.</li>
-        <li><strong>Migration Impact:</strong> Accelerated platform migration with zero downtime and improved audit readiness.</li>
-        <li><strong>Ops Efficiency:</strong> Introduced monitoring and CI/CD practices that reduced incident time-to-recovery.</li>
-        <li><strong>Awards:</strong> <em>Rising Star Award</em> at Capgemini.</li>
-        <li><strong>Certifications:</strong> AZ-900 (Azure), OCEAN Python Practitioner, Tableau, SQL.</li>
-      </ul>
+    <!-- Premier Credentials & Certifications -->
+    <section class="section-card certifications-gallery scroll-reveal" id="certifications" aria-label="Certifications and Credentials">
+      <h2>Certifications & Professional Credentials</h2>
+      
+      <!-- Premier Flagship Badges -->
+      <div class="flagship-certs-grid">
+        <div class="flagship-cert-card gcp">
+          <div class="flagship-cert-icon"><i class="fab fa-google"></i></div>
+          <div class="flagship-cert-info">
+            <span class="flagship-cert-badge">PREMIER ARCHITECT</span>
+            <h3>Google Professional Cloud Architect</h3>
+            <p>Google Cloud</p>
+          </div>
+        </div>
+        <div class="flagship-cert-card fabric">
+          <div class="flagship-cert-icon"><i class="fab fa-microsoft"></i></div>
+          <div class="flagship-cert-info">
+            <span class="flagship-cert-badge">MICROSOFT CERTIFIED</span>
+            <h3>Fabric Data Engineer Associate (DP-700)</h3>
+            <p>Microsoft</p>
+          </div>
+        </div>
+        <div class="flagship-cert-card azure">
+          <div class="flagship-cert-icon"><i class="fab fa-microsoft"></i></div>
+          <div class="flagship-cert-info">
+            <span class="flagship-cert-badge">CLOUD FUNDAMENTALS</span>
+            <h3>Azure Fundamentals (AZ-900)</h3>
+            <p>Microsoft</p>
+          </div>
+        </div>
+        <div class="flagship-cert-card award">
+          <div class="flagship-cert-icon"><i class="fas fa-trophy"></i></div>
+          <div class="flagship-cert-info">
+            <span class="flagship-cert-badge">SPECIAL HONORS</span>
+            <h3>Rising Star Award</h3>
+            <p>Capgemini</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate Gallery Tabs/Cards -->
+      <h3 class="gallery-subheading"><i class="fas fa-images"></i> Verified Credentials Gallery</h3>
+      <div class="cert-category-block">
+        <div class="cert-gallery-grid unique-cert-grid">
+          <div class="cert-gallery-item">
+            <img src="certificates/MICROSOFT_AZ900.png" alt="Azure Fundamentals AZ-900" loading="lazy">
+            <span class="cert-title">Azure Fundamentals (AZ-900)</span>
+          </div>
+          <div class="cert-gallery-item">
+            <img src="certificates/Capgemini Rising Star Award.png" alt="Capgemini Rising Star Award" loading="lazy">
+            <span class="cert-title">Capgemini Rising Star Award</span>
+          </div>
+          <div class="cert-gallery-item">
+            <img src="certificates/CAPGEMINI_OCEAN_CERTIFICATION_Python_Practioner.png" alt="OCEAN Python Practitioner" loading="lazy">
+            <span class="cert-title">OCEAN Python Practitioner</span>
+          </div>
+          <div class="cert-gallery-item">
+            <img src="certificates/COURSERA_Cleaning and Exploring Big Data using PySpark.png" alt="Big Data Using PySpark" loading="lazy">
+            <span class="cert-title">PySpark Big Data Cleaning & Exploring</span>
+          </div>
+          <div class="cert-gallery-item">
+            <img src="certificates/Hacker Rank Sql_Intermediate.png" alt="HackerRank SQL Intermediate" loading="lazy">
+            <span class="cert-title">HackerRank SQL Intermediate</span>
+          </div>
+          <div class="cert-gallery-item">
+            <img src="certificates/UDEMY_SQL.png" alt="Udemy SQL Mastery" loading="lazy">
+            <span class="cert-title">SQL Advanced Mastery</span>
+          </div>
+          <div class="cert-gallery-item">
+            <img src="certificates/ISRO_Machine learning to Deep Learning.png" alt="ISRO Machine Learning" loading="lazy">
+            <span class="cert-title">ISRO ML to Deep Learning</span>
+          </div>
+          <div class="cert-gallery-item">
+            <img src="certificates/CAPGEMINI_OCEAN_CERTIFICATION_Tableau.png" alt="Tableau Ocean Certification" loading="lazy">
+            <span class="cert-title">Tableau Enterprise Analytics</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Projects & Tools -->
-    <section class="section-card projects scroll-reveal" id="projects" aria-label="Projects and Tools">
-      <h2>Personal Projects</h2>
+    <!-- Personal & Open Source Projects -->
+    <section class="section-card projects scroll-reveal" id="projects" aria-label="Projects and Repositories">
+      <h2>Data Engineering & Open Source Projects</h2>
       
-      <!-- Featured GitHub Projects -->
       <div class="featured-projects">
-        <div class="project-card featured" data-link="https://github.com/Rakesh-b21/real-time-stock-market-data-pipeline" tabindex="0" role="link" aria-label="Open Real-time Stock Market Data Pipeline on GitHub">
+        <div class="project-card featured" data-link="https://github.com/Rakesh-b21/real-time-stock-market-data-pipeline" tabindex="0" role="link" aria-label="Open Real-time Stock Market Data Pipeline">
           <div class="project-header">
-            <div class="project-icon">
-              <i class="fas fa-chart-line"></i>
-            </div>
+            <div class="project-icon"><i class="fas fa-chart-line"></i></div>
             <div class="project-title">
-              <h3>Real-time Stock Market Data Pipeline</h3>
-              <p class="project-subtitle">Advanced data streaming and analytics platform</p>
+              <h3>Real-Time Stock Market Data Pipeline</h3>
+              <p class="project-subtitle">High-throughput Kafka streaming & dynamic financial tickers</p>
             </div>
-            <a href="https://github.com/Rakesh-b21/real-time-stock-market-data-pipeline" target="_blank" class="github-link" aria-label="View project on GitHub">
+            <a href="https://github.com/Rakesh-b21/real-time-stock-market-data-pipeline" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="View on GitHub">
               <i class="fab fa-github"></i>
             </a>
           </div>
           <div class="project-content">
-            <p>Real-time pipeline to fetch, stream, and store market data. Python producer + Kafka for reliable, scalable ingestion.</p>
-            <div class="project-highlights">
-              <span class="highlight">• Kafka streaming</span>
-              <span class="highlight">• Dynamic tickers</span>
-            </div>
+            <p>End-to-end streaming pipeline fetching, streaming, and persisting market feeds. Leverages a distributed Kafka producer/consumer pattern for scalable, low-latency financial ingestion.</p>
             <div class="project-tags">
               <span>Python</span>
               <span>Apache Kafka</span>
               <span>Yahoo Finance API</span>
-              <span>Real-time Analytics</span>
-              <span>Data Streaming</span>
+              <span>Streaming Analytics</span>
             </div>
           </div>
         </div>
 
-        <div class="project-card featured" data-link="https://github.com/Rakesh-b21/agri_data_pipeline" tabindex="0" role="link" aria-label="Open Agriculture Data Pipeline on GitHub">
+        <div class="project-card featured" data-link="https://github.com/Rakesh-b21/agri_data_pipeline" tabindex="0" role="link" aria-label="Open Agriculture Data Pipeline">
           <div class="project-header">
-            <div class="project-icon">
-              <i class="fas fa-seedling"></i>
-            </div>
+            <div class="project-icon"><i class="fas fa-seedling"></i></div>
             <div class="project-title">
-              <h3>Agriculture Data Pipeline</h3>
-              <p class="project-subtitle">Smart farming analytics and insights platform</p>
+              <h3>Smart Agriculture Big Data Pipeline</h3>
+              <p class="project-subtitle">PySpark & Azure Cosmos DB IoT analytics platform</p>
             </div>
-            <a href="https://github.com/Rakesh-b21/agri_data_pipeline" target="_blank" class="github-link" aria-label="View project on GitHub">
+            <a href="https://github.com/Rakesh-b21/agri_data_pipeline" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="View on GitHub">
               <i class="fab fa-github"></i>
             </a>
           </div>
           <div class="project-content">
-            <p>End-to-end pipeline for farm analytics using sensor and weather data to drive insights and reporting.</p>
-            <div class="project-highlights">
-              <span class="highlight">• IoT ingestion</span>
-              <span class="highlight">• Predictive analytics</span>
-            </div>
+            <p>Distributed IoT data pipeline aggregating sensor telemetry and meteorological datasets with PySpark, persisting into Azure Cosmos DB for predictive analytics and crop health dashboards.</p>
             <div class="project-tags">
               <span>PySpark</span>
               <span>Azure Cosmos DB</span>
-              <span>Machine Learning</span>
+              <span>IoT Data</span>
               <span>Tableau</span>
-              <span>IoT Analytics</span>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Additional Projects -->
-      <div class="additional-projects">
-        <h3 class="section-subtitle">Other Projects (Professional)</h3>
-        <div class="projects-grid">
-          <div class="project-card collapsible">
-            <button class="project-toggle" aria-expanded="false">
-              <span>Database Monitoring Tool</span>
-              <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="project-details" style="display:none;">
-              <p>Real-time DB and ETL health monitoring with alerts and dashboards.</p>
-              <div class="project-tags">
-                <span>Python</span>
-                <span>Pandas</span>
-                <span>SQL</span>
-                <span>Monitoring</span>
-              </div>
-            </div>
-          </div>
-          <div class="project-card collapsible">
-            <button class="project-toggle" aria-expanded="false">
-              <span>ETL Pipeline Builder</span>
-              <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="project-details" style="display:none;">
-              <p>Reusable ETL framework (Pandas, PySpark) with strong logging and error handling.</p>
-              <div class="project-tags">
-                <span>Python</span>
-                <span>PySpark</span>
-                <span>ETL</span>
-                <span>Data Processing</span>
-              </div>
-            </div>
-          </div>
-          <div class="project-card collapsible">
-            <button class="project-toggle" aria-expanded="false">
-              <span>Informatica Workflow Automation</span>
-              <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="project-details" style="display:none;">
-              <p>Automated Informatica deployments and executions using shell scripts.</p>
-              <div class="project-tags">
-                <span>Informatica</span>
-                <span>Shell Scripting</span>
-                <span>ETL</span>
-                <span>Automation</span>
-              </div>
-            </div>
-          </div>
-          <div class="project-card collapsible">
-            <button class="project-toggle" aria-expanded="false">
-              <span>Data Reconciliation Framework</span>
-              <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="project-details" style="display:none;">
-              <p>Python framework (Pandas) for cross-source data integrity checks.</p>
-              <div class="project-tags">
-                <span>Python</span>
-                <span>Pandas</span>
-                <span>Data Quality</span>
-                <span>Validation</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Certificates Gallery -->
-    <section class="section-card certificates-gallery scroll-reveal" id="certificates-gallery" aria-label="Certificates Gallery">
-      <h2>Certificates Gallery</h2>
-
-      <div class="cert-category-block">
-        <h3 class="cert-category">Coursera</h3>
-        <div class="cert-gallery-grid unique-cert-grid">
-          <!-- Coursera certificates -->
-          <div class="cert-gallery-item">
-            <img src="certificates/COURSERA_Configuring for Scala with IntelliJ IDEA.png" alt="Configuring for Scala with IntelliJ IDEA Certificate" loading="lazy">
-            <span class="cert-title">Configuring for Scala with IntelliJ IDEA</span>
-          </div>
-          <div class="cert-gallery-item">
-            <img src="certificates/COURSERA_Data Analysis Using Pyspark.png" alt="Data Analysis Using PySpark Certificate" loading="lazy">
-            <span class="cert-title">Data Analysis Using PySpark</span>
-          </div>
-          <div class="cert-gallery-item">
-            <img src="certificates/COURSERA_HTML.png" alt="HTML Certificate" loading="lazy">
-            <span class="cert-title">HTML</span>
-          </div>
-          <div class="cert-gallery-item">
-            <img src="certificates/COURSERA_Introduction to TensorFlow for AI, ML and Deep learning.png" alt="TensorFlow Certificate" loading="lazy">
-            <span class="cert-title">Introduction to TensorFlow for AI, ML and Deep Learning</span>
-          </div>
-          <div class="cert-gallery-item">
-            <img src="certificates/COURSERA_Python Data Structures.png" alt="Python Data Structures Certificate" loading="lazy">
-            <span class="cert-title">Python Data Structures</span>
-          </div>
-          <div class="cert-gallery-item">
-            <img src="certificates/COURSERA_PYTHON_Programming for Everybody.png" alt="Programming for Everybody (Python) Certificate" loading="lazy">
-            <span class="cert-title">Programming for Everybody (Python)</span>
-          </div>
-          <div class="cert-gallery-item">
-            <img src="certificates/COURSERA_Using Python to Access Web Data.png" alt="Using Python to Access Web Data" loading="lazy">
-            <span class="cert-title">Using Python to Access Web Data</span>
-          </div>
-          <div class="cert-gallery-item">
-            <img src="certificates/COUSERA_Agile Software Development.png" alt="Agile Software Development Certificate" loading="lazy">
-            <span class="cert-title">Agile Software Development</span>
-          </div>
-          <div class="cert-gallery-item">
-            <img src="certificates/COURSERA_Cleaning and Exploring Big Data using PySpark.png" alt="Cleaning and Exploring Big Data using PySpark Certificate" loading="lazy">
-            <span class="cert-title">Cleaning and Exploring Big Data using PySpark</span>
-          </div>
-        </div>
-      </div>
-      <div class="cert-category-block">
-        <h3 class="cert-category">Udemy</h3>
-        <div class="cert-gallery-grid unique-cert-grid">
-          <!-- Udemy certificates -->
-          <div class="cert-gallery-item">
-            <img src="certificates/UDEMY_SQL.png" alt="SQL Certificate" loading="lazy">
-            <span class="cert-title">SQL</span>
-          </div>
-          <div class="cert-gallery-item">
-            <img src="certificates/UDEMY_Tableau.png" alt="Tableau Certificate" loading="lazy">
-            <span class="cert-title">Tableau</span>
-          </div>
-        </div>
-      </div>
-      <div class="cert-category-block">
-        <h3 class="cert-category">HackerRank</h3>
-        <div class="cert-gallery-grid unique-cert-grid">
-          <!-- HackerRank certificates -->
-          <div class="cert-gallery-item">
-            <img src="certificates/Hacker Rank PythonBasic.png" alt="Python Basic Certificate" loading="lazy">
-            <span class="cert-title">Python Basic</span>
-          </div>
-          <div class="cert-gallery-item">
-            <img src="certificates/Hacker Rank Sql_Intermediate.png" alt="SQL Intermediate Certificate" loading="lazy">
-            <span class="cert-title">SQL Intermediate</span>
-          </div>
-          <div class="cert-gallery-item">
-            <img src="certificates/Hacker Rank SqlBasic.png" alt="SQL Basic Certificate" loading="lazy">
-            <span class="cert-title">SQL Basic</span>
-          </div>
-        </div>
-      </div>
-      <div class="cert-category-block">
-        <h3 class="cert-category">Capgemini</h3>
-        <div class="cert-gallery-grid unique-cert-grid">
-          <!-- Capgemini certificates -->
-          <div class="cert-gallery-item">
-            <img src="certificates/Capgemini Rising Star Award.png" alt="Rising Star Award Certificate" loading="lazy">
-            <span class="cert-title">Rising Star Award</span>
-          </div>
-          <div class="cert-gallery-item">
-            <img src="certificates/CAPGEMINI_OCEAN_CERTIFICATION_Python.png" alt="OCEAN Python Certificate" loading="lazy">
-            <span class="cert-title">OCEAN Python</span>
-          </div>
-          <div class="cert-gallery-item">
-            <img src="certificates/CAPGEMINI_OCEAN_CERTIFICATION_Python_Practioner.png" alt="OCEAN Python Practitioner Certificate" loading="lazy">
-            <span class="cert-title">OCEAN Python Practitioner</span>
-          </div>
-          <div class="cert-gallery-item">
-            <img src="certificates/CAPGEMINI_OCEAN_CERTIFICATION_Tableau.png" alt="OCEAN Tableau Certificate" loading="lazy">
-            <span class="cert-title">OCEAN Tableau</span>
-          </div>
-        </div>
-      </div>
-      <div class="cert-category-block">
-        <h3 class="cert-category">Microsoft</h3>
-        <div class="cert-gallery-grid unique-cert-grid">
-          <!-- Microsoft certificates -->
-          <div class="cert-gallery-item">
-            <img src="certificates/MICROSOFT_AZ900.png" alt="Azure Fundamentals (AZ-900) Certificate" loading="lazy">
-            <span class="cert-title">Azure Fundamentals (AZ-900)</span>
-          </div>
-        </div>
-      </div>
-      <div class="cert-category-block">
-        <h3 class="cert-category">ISRO</h3>
-        <div class="cert-gallery-grid unique-cert-grid">
-          <!-- ISRO certificates -->
-          <div class="cert-gallery-item">
-            <img src="certificates/ISRO_Machine learning to Deep Learning.png" alt="Machine Learning to Deep Learning Certificate" loading="lazy">
-            <span class="cert-title">Machine Learning to Deep Learning</span>
-          </div>
-        </div>
-      </div>
-      <div class="cert-category-block">
-        <h3 class="cert-category">Ethical Byte</h3>
-        <div class="cert-gallery-grid unique-cert-grid">
-          <!-- Ethical Byte certificates -->
-          <div class="cert-gallery-item">
-            <img src="certificates/ETHICAL_BYTE_ROBOTICS WITH RASPBERRY PI.png" alt="Robotics with Raspberry Pi Certificate" loading="lazy">
-            <span class="cert-title">Robotics with Raspberry Pi</span>
           </div>
         </div>
       </div>
@@ -472,16 +515,13 @@
       <h2>Education</h2>
       <div class="edu-timeline">
         <div class="edu-item">
-          <div class="edu-icon">
-            <i class="fas fa-graduation-cap"></i>
-          </div>
+          <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
           <div class="edu-content">
             <div class="edu-header">
-              <h3>Bachelor of Technology (EEE)</h3>
-              <div class="edu-cgpa-badge">CGPA: 9.02</div>
+              <h3>Bachelor of Technology (B.Tech) &mdash; Electrical & Electronics Engineering</h3>
+              <div class="edu-cgpa-badge">CGPA: 9.02 / 10</div>
             </div>
-            <div class="edu-school">REVA University, Bengaluru · 2018–2022</div>
-            <div class="edu-meta"><span class="edu-field sr-only">Electrical and Electronics Engineering</span></div>
+            <div class="edu-school">REVA University, Bengaluru, India &bull; Graduated Jun 2022</div>
           </div>
         </div>
       </div>
@@ -489,39 +529,39 @@
 
     <!-- More About Me -->
     <section class="section-card more-about scroll-reveal" id="more-about" aria-label="More About Me">
-      <h2>More About Me</h2>
+      <h2>Personality & Core Strengths</h2>
       <div class="more-cards minimal-more">
+        <div class="more-card glass-card">
+          <span class="more-icon-simple"><i class="fas fa-music"></i></span>
+          <div>
+            <h3>Creative Passions</h3>
+            <p>Music Production, Cricket, Creative Arts, and Generative AI systems.</p>
+          </div>
+        </div>
         <div class="more-card glass-card">
           <span class="more-icon-simple"><i class="fas fa-language"></i></span>
           <div>
             <h3>Languages</h3>
-            <p>English, Hindi, Kannada (Professional)</p>
+            <p>English, Hindi, Kannada (Full Professional Proficiency).</p>
           </div>
         </div>
         <div class="more-card glass-card">
-          <span class="more-icon-simple"><i class="fas fa-heart"></i></span>
+          <span class="more-icon-simple"><i class="fas fa-compass"></i></span>
           <div>
-            <h3>Interests</h3>
-            <p>Music, Cricket, Creative Arts, AI</p>
+            <h3>Engineering Ethos</h3>
+            <p>Performance-obsessed, low-friction architecture, zero-downtime execution.</p>
           </div>
         </div>
-        <div class="more-card glass-card">
-          <span class="more-icon-simple">★</span>
-          <div>
-            <h3>Strengths</h3>
-            <p>Fast learner, Team player, Problem solver</p>
-          </div>
-        </div>
-        <!-- Add more cards as you like -->
       </div>
     </section>
 
     <!-- Chill Out -->
     <section class="section-card chillout scroll-reveal" id="chillout" aria-label="Chill Out">
-      <h2>Chill Out</h2>
+      <h2>Chill Out & Easter Egg</h2>
       <div class="chillout-card">
-        <h3>Take a Break!</h3>
-        <a href="snake-game.html" class="chillout-link">Play Snake</a>
+        <h3>Need a break from data pipelines?</h3>
+        <p>Challenge the high score in our built-in retro arcade game.</p>
+        <a href="snake-game.html" class="chillout-link"><i class="fas fa-gamepad"></i> Launch Snake Arcade</a>
       </div>
     </section>
   </main>
@@ -533,7 +573,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Rakesh B Choudhary</p>
+    <p>&copy; <span id="current-year">2026</span> Rakesh B Choudhary &bull; Lead Data Engineer &bull; Built for High Throughput</p>
   </footer>
 
   <!-- Lightbox for certificates -->
@@ -543,5 +583,6 @@
   </div>
 
   <script src="scripts/main.js"></script>
+  <script src="scripts/kinetic-stream.js"></script>
 </body>
 </html>

@@ -1,0 +1,518 @@
+/* ==========================================================================
+   THEME 3: THE MONOLITH (Architectural Precision & Blueprint Rigor)
+   Palette: Basalt Charcoal (#121316), Laser Lime (#D4FF00),
+            Blueprint Cyan (#38BDF8), Cold Titanium (#F1F5F9)
+   ========================================================================== */
+
+:root {
+  --mono-bg: #121316;
+  --mono-card: #181A20;
+  --mono-card-hover: #20242D;
+  --mono-border: rgba(212, 255, 0, 0.25);
+  --mono-border-cyan: rgba(56, 189, 248, 0.25);
+  
+  --mono-lime: #D4FF00;
+  --mono-cyan: #38BDF8;
+  --mono-titanium: #F1F5F9;
+  --mono-muted: #94A3B8;
+  --mono-grid-color: rgba(255, 255, 255, 0.035);
+  
+  --mono-lime-glow: 0 0 25px rgba(212, 255, 0, 0.25);
+  --mono-cyan-glow: 0 0 25px rgba(56, 189, 248, 0.25);
+}
+
+body.theme-monolith {
+  background-color: var(--mono-bg) !important;
+  color: var(--mono-titanium) !important;
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  background-image: 
+    linear-gradient(to right, var(--mono-grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--mono-grid-color) 1px, transparent 1px) !important;
+  background-size: 32px 32px !important;
+  position: relative;
+}
+
+/* Blueprint Mode Toggle (Interactive Signature) */
+body.blueprint-mode {
+  --mono-bg: #0A192F !important;
+  --mono-card: rgba(13, 37, 68, 0.85) !important;
+  --mono-border: #38BDF8 !important;
+  --mono-lime: #38BDF8 !important;
+  --mono-grid-color: rgba(56, 189, 248, 0.15) !important;
+}
+
+.blueprint-toggle-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  background: rgba(212, 255, 0, 0.1);
+  color: var(--mono-lime);
+  border: 1px solid var(--mono-lime);
+  padding: 5px 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.blueprint-toggle-btn:hover {
+  background: var(--mono-lime);
+  color: #121316;
+}
+
+/* Nav Brand */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+}
+
+.mono-spec-indicator {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--mono-lime);
+  border: 1px solid var(--mono-lime);
+  padding: 1px 6px;
+  border-radius: 2px;
+}
+
+.nav-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  padding: 2px 7px;
+  border-radius: 2px;
+  background: rgba(212, 255, 0, 0.1);
+  color: var(--mono-lime);
+  border: 1px solid rgba(212, 255, 0, 0.3);
+}
+
+/* Hero Section */
+.hero-container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-photo-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hero-photo-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 4px;
+  border: 2px dashed var(--mono-lime);
+  opacity: 0.7;
+}
+
+.hero-photo img {
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #20242D;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-status-pill {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: #181A20;
+  border: 1px solid var(--mono-lime);
+  color: var(--mono-lime);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.76rem;
+  color: var(--mono-lime);
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  margin: 0.2rem 0 0.6rem 0;
+}
+
+.hero-location {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--mono-muted);
+  font-size: 0.88rem;
+  margin-top: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin: 1.5rem 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.75rem 1.4rem;
+  border-radius: 2px;
+  font-size: 0.88rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
+
+.btn-primary {
+  background: var(--mono-lime);
+  color: #121316 !important;
+  box-shadow: var(--mono-lime-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 35px rgba(212, 255, 0, 0.5);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: #F1F5F9 !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-secondary:hover {
+  border-color: var(--mono-lime);
+  color: var(--mono-lime) !important;
+  transform: translateY(-2px);
+}
+
+.btn-tertiary {
+  background: rgba(56, 189, 248, 0.1);
+  color: var(--mono-cyan) !important;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.btn-tertiary:hover {
+  background: rgba(56, 189, 248, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Telemetry Section: Monolith Precision */
+.telemetry-section {
+  background: var(--mono-card) !important;
+  border: 1px solid var(--mono-border) !important;
+  border-radius: 4px;
+  padding: 2.2rem;
+  margin-top: 1rem;
+  position: relative;
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
+}
+
+.telemetry-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.8rem;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.telemetry-header h2 {
+  font-size: 1.35rem;
+  margin: 0;
+  color: #FFFFFF !important;
+  border: none !important;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.telemetry-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  padding: 3px 8px;
+  background: rgba(212, 255, 0, 0.1);
+  border: 1px solid var(--mono-lime);
+  color: var(--mono-lime);
+  border-radius: 2px;
+}
+
+.telemetry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.4rem;
+}
+
+.telemetry-card {
+  background: #121419;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  padding: 1.5rem;
+  transition: all 0.25s ease;
+  position: relative;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+
+.telemetry-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--mono-lime);
+  box-shadow: var(--mono-lime-glow);
+}
+
+.telemetry-icon {
+  font-size: 1.2rem;
+  color: var(--mono-lime);
+  margin-bottom: 0.6rem;
+}
+
+.telemetry-card.highlight-gold .telemetry-icon {
+  color: var(--mono-lime);
+}
+
+.telemetry-metric {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--mono-lime);
+  line-height: 1.1;
+  margin-bottom: 0.4rem;
+}
+
+.telemetry-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #FFFFFF;
+  margin-bottom: 0.4rem;
+}
+
+.telemetry-desc {
+  font-size: 0.82rem;
+  color: var(--mono-muted);
+  line-height: 1.45;
+}
+
+/* Architecture Highlights Case Studies */
+.case-study-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.case-study-card {
+  background: var(--mono-card);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 3px;
+  padding: 1.6rem;
+  transition: all 0.25s ease;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+}
+
+.case-study-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--mono-lime);
+  box-shadow: var(--mono-lime-glow);
+}
+
+.case-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--mono-lime);
+  background: rgba(212, 255, 0, 0.1);
+  padding: 2px 7px;
+  border-radius: 2px;
+  margin-bottom: 0.8rem;
+  border: 1px solid rgba(212, 255, 0, 0.3);
+}
+
+.case-study-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 0 0.3rem 0;
+}
+
+.case-client {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--mono-cyan);
+  font-weight: 600;
+  margin-bottom: 0.9rem;
+}
+
+.case-bullets {
+  padding-left: 1.2rem;
+  margin: 0 0 1rem 0;
+  font-size: 0.86rem;
+  color: #CBD5E1;
+  line-height: 1.55;
+}
+
+.case-bullets li {
+  margin-bottom: 0.5rem;
+}
+
+.case-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.case-tags span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #E2E8F0;
+  padding: 2px 7px;
+  border-radius: 2px;
+}
+
+/* Flagship Credentials */
+.flagship-certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+  margin: 1.5rem 0 2rem 0;
+}
+
+.flagship-cert-card {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem 1.4rem;
+  background: var(--mono-card);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 3px;
+  transition: all 0.25s ease;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+
+.flagship-cert-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--mono-lime);
+  box-shadow: var(--mono-lime-glow);
+}
+
+.flagship-cert-icon {
+  font-size: 2rem;
+  color: var(--mono-lime);
+  flex-shrink: 0;
+}
+
+.flagship-cert-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--mono-cyan);
+}
+
+.flagship-cert-card h3 {
+  font-size: 0.95rem;
+  margin: 0.2rem 0 0.1rem 0;
+  color: #FFFFFF;
+}
+
+.flagship-cert-card p {
+  font-size: 0.8rem;
+  color: var(--mono-muted);
+  margin: 0;
+}
+
+.gallery-subheading {
+  font-size: 1.1rem;
+  margin: 2rem 0 1rem 0;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Experience Header */
+.exp-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.exp-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  padding: 3px 8px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #E2E8F0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.exp-badge.current-role {
+  background: rgba(212, 255, 0, 0.15);
+  color: var(--mono-lime);
+  border-color: rgba(212, 255, 0, 0.5);
+}
+
+/* Skills Chips */
+.highlight-chip {
+  border-color: rgba(212, 255, 0, 0.4) !important;
+  color: var(--mono-lime) !important;
+  background: rgba(212, 255, 0, 0.08) !important;
+}
+
+.profile-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--mono-lime);
+  margin-top: 4px;
+  display: block;
+}
+
+/* Section Cards */
+.section-card {
+  background: var(--mono-card) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 4px !important;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+}
+
+.section-card h2 {
+  color: #FFFFFF !important;
+  border-left: 4px solid var(--mono-lime) !important;
+  padding-left: 0.8rem;
+  font-family: 'JetBrains Mono', monospace;
+}

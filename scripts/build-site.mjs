@@ -45,8 +45,15 @@ for (const filePath of files) {
   const originalImage = await readFile(filePath);
   const originalSize = originalImage.length;
   const temporaryPath = `${filePath}.optimized.webp`;
+  const isCertificate = path.dirname(filePath).split(path.sep).at(-1) === "certificates";
   await sharp(originalImage)
-    .webp({ quality: 88, effort: 6 })
+    .resize({
+      width: isCertificate ? 1600 : 800,
+      height: isCertificate ? 1600 : 800,
+      fit: "inside",
+      withoutEnlargement: true,
+    })
+    .webp({ quality: 82, effort: 6 })
     .toFile(temporaryPath);
 
   const outputPath = extension === ".webp"
@@ -64,13 +71,18 @@ for (const filePath of files) {
 
 for (const filePath of await listFiles(outputDirectory)) {
   const extension = path.extname(filePath).toLowerCase();
-  if (![".css", ".js"].includes(extension)) continue;
+  if (![".html", ".css", ".js"].includes(extension)) continue;
 
   const content = await readFile(filePath, "utf8");
   const optimizedContent = content.replace(
     /((?:images|certificates)\/[^"'?#]+)\.(?:png|jpe?g)(?=[?#"')]|$)/gi,
     "$1.webp",
   );
+  if (extension === ".html") {
+    await writeFile(filePath, optimizedContent);
+    continue;
+  }
+
   const minified = extension === ".css"
     ? new CleanCSS({ level: 2 }).minify(optimizedContent)
     : await minifyJavaScript(optimizedContent);
@@ -85,6 +97,27 @@ for (const filePath of await listFiles(outputDirectory)) {
   originalCodeBytes += Buffer.byteLength(content);
   optimizedCodeBytes += Buffer.byteLength(minifiedCode);
   await writeFile(filePath, minifiedCode);
+}
+
+const imageReferencePattern = /((?:images|certificates)\/[^"'?#]+?\.(?:png|jpe?g|webp|svg))(?=[?#"')\s]|$)/gi;
+for (const filePath of await listFiles(outputDirectory)) {
+  if (![".html", ".css", ".js"].includes(path.extname(filePath).toLowerCase())) continue;
+
+  const content = await readFile(filePath, "utf8");
+  for (const [, reference] of content.matchAll(imageReferencePattern)) {
+    const imagePath = path.resolve(outputDirectory, reference);
+    if (!imagePath.startsWith(`${outputDirectory}${path.sep}`)) {
+      throw new Error(`Image reference escapes the build output directory: ${reference}`);
+    }
+    try {
+      await stat(imagePath);
+    } catch (error) {
+      throw new Error(
+        `Missing image referenced by ${path.relative(outputDirectory, filePath)}: ${reference}`,
+        { cause: error },
+      );
+    }
+  }
 }
 
 const reduction = originalImageBytes === 0

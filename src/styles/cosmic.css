@@ -323,8 +323,8 @@ body.lightbox-open {
 /* ─── MAIN CONTENT CONTAINER ─── */
 .content {
   margin-left: var(--sidebar-w);
-  max-width: 1060px;
-  margin-right: auto;
+  width: calc(100% - var(--sidebar-w));
+  max-width: none;
   padding: 3rem 2.5rem 6rem;
   position: relative;
   z-index: 10;
@@ -1644,6 +1644,7 @@ body.lightbox-open {
   }
   .content {
     margin-left: 0;
+    width: 100%;
     padding: 5rem 1.2rem 4rem;
   }
   .about__grid,

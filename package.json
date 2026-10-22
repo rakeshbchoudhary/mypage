@@ -4,6 +4,7 @@
   "description": "This is a modern, responsive portfolio website project that showcases personal projects, skills, and coding profiles. It features a visually perfect dark mode, with special attention to the Skills & Coding Profiles section and education CGPA badge. Coding profile icons are optimized for both light and dark themes, ensuring brand visibility and vibrance.",
   "main": "index.js",
   "scripts": {
+    "build": "node scripts/build-site.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,8 +19,9 @@
   },
   "homepage": "https://github.com/Rakesh-b21/mypage#readme",
   "devDependencies": {
-    "clean-css-cli": "^5.6.3",
+    "clean-css": "^5.3.3",
     "html-minifier-terser": "^7.2.0",
+    "sharp": "^0.35.5",
     "svgo": "^4.0.0",
     "terser": "^5.43.1"
   }

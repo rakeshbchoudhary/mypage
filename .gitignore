@@ -13,6 +13,7 @@ node_modules/
 
 # Build output (source branch)
 dist/
+.pages-build/
 
 # Local worktree directory (not needed in repo)
 gh-pages/

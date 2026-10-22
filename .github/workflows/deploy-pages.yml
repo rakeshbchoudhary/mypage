@@ -25,21 +25,39 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Check out selected branch
+      - name: Check out build tools from main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: build-tools
+
+      - name: Check out selected branch source
         uses: actions/checkout@v4
         with:
           ref: ${{ inputs.branch }}
+          path: branch-source
 
-      - name: Prepare site
-        run: |
-          mkdir _site
-          cp -R src/. _site/
-          touch _site/.nojekyll
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: build-tools/package-lock.json
+
+      - name: Install build dependencies
+        working-directory: build-tools
+        run: npm ci
+
+      - name: Build optimized site
+        working-directory: build-tools
+        env:
+          SITE_SOURCE_DIR: ../branch-source/src
+        run: npm run build
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: build-tools/.pages-build
 
       - name: Deploy to GitHub Pages
         id: deployment

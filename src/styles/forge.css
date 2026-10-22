@@ -94,6 +94,29 @@ p {
   --font-mono: 'JetBrains Mono', monospace;
 }
 
+body.light-mode {
+  --bg-primary: #F7F6F8;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #F0EDF2;
+  --bg-hover: #E7E2EA;
+
+  --ember: #B84A24;
+  --ember-light: #C65B35;
+  --ember-dark: #963919;
+  --lavender: #6554D9;
+  --lavender-light: #5141C1;
+
+  --text-primary: #211D24;
+  --text-secondary: #5D5662;
+  --text-tertiary: #746B78;
+
+  --border: rgba(33, 29, 36, 0.1);
+  --border-hover: rgba(184, 74, 36, 0.35);
+
+  --glow-ember: 0 0 30px rgba(184, 74, 36, 0.14);
+  --glow-lavender: 0 0 30px rgba(101, 84, 217, 0.14);
+}
+
 body {
   font-family: var(--font-body);
   background: var(--bg-primary);
